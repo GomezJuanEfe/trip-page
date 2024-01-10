@@ -1,0 +1,20 @@
+---
+interface Props {
+  color: string;
+  subHeading: string;
+  heading: string;
+}
+
+const { color, subHeading, heading } = Astro.props;
+---
+
+<div class="py-[50px] px-[55px]">
+  <h3
+    class=`font-serif font-extrabold ${color} tracking-[2px] leading-[1.9rem]`
+  >
+    {subHeading}
+  </h3>
+  <h2 class=`text-3xl font-extrabold ${color} tracking-[4px] leading-10 mt-2`>
+    {heading}
+  </h2>
+</div>

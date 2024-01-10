@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import SectionLayout from "../components/SectionLayout.astro";
+import Info from "../components/Info.astro";
+import HeadingSec from "../components/HeadingSec.astro";
+---
+
+<Layout
+	title="Travellian"
+	description="Discover, plan, and experience your dream destinations effortlessly with our intuitive trip application. Seamlessly organize itineraries, find hidden gems, and create unforgettable journeys with ease."
+>
+	<main>
+		<Hero />
+
+		<SectionLayout>
+			<img
+				class="py-[40px] px-[30px]"
+				src="./square.png"
+				alt="Square background decoration"
+			/>
+			<Info
+				subHeading="What we do for you"
+				heading="Transformando metas en realidades: tu guía desde el inicio hasta tu destino"
+				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit congue nisi, sed egestas tellus."
+				button="FIND OUT MORE"
+			/>
+		</SectionLayout>
+
+		<SectionLayout>
+			<div class="w-[50vw] h-[60vh] mb-[10px]">
+				<img
+					class="h-full object-cover"
+					src="./img-section-1.png"
+					alt="People on the computer"
+				/>
+			</div>
+			<Info
+				subHeading="Destinies"
+				heading="Escoge entre nuestros 5 paises"
+				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit congue nisi, sed egestas tellus."
+				button="FIND OUT MORE"
+			/>
+		</SectionLayout>
+
+		<SectionLayout>
+			<div class="h-[60vh] mb-[10px] flex flex-row-reverse">
+				<img
+					class="h-full w-[50vw] object-cover"
+					src="./img-section-1.png"
+					alt="People on the computer"
+				/>
+			</div>
+			<Info
+				subHeading="Destinies"
+				heading="Escoge entre nuestros 5 paises"
+				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit congue nisi, sed egestas tellus."
+				button="FIND OUT MORE"
+			/>
+		</SectionLayout>
+
+		<SectionLayout background="bg-darkBlue">
+			<HeadingSec
+				color="text-white"
+				subHeading="Nuestros sestinos"
+				heading="Explore the world"
+			/>
+		</SectionLayout>
+
+		<SectionLayout>
+			<HeadingSec
+				color="text-darkBlue"
+				subHeading="Stay Update"
+				heading="Our latest news..."
+			/>
+		</SectionLayout>
+	</main>
+</Layout>

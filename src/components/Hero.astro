@@ -1,0 +1,38 @@
+---
+
+---
+
+<section class="bg-[url('/hero-bg.png')] h-screen relative">
+  <div class="mask absolute inset-0 m-auto">
+    <video
+      class="absolute inset-0 m-auto"
+      autoplay
+      loop
+      muted
+      playsinline
+      id="main-video"
+      preload="metadata"
+    >
+      <source src="/sky-video.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
+
+<style>
+  .mask {
+    width: 90vw;
+
+    -webkit-mask-image: url("./dream.svg");
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+
+    mask-image: url("./dream.svg");
+    mask-position: 50% 45%;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+  .mask video {
+    width: 100%;
+  }
+</style>

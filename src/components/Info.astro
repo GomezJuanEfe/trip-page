@@ -1,0 +1,25 @@
+---
+interface Props {
+  subHeading: string;
+  heading: string;
+  paragraph: string;
+  button: string;
+}
+
+const { subHeading, heading, paragraph, button } = Astro.props;
+---
+
+<div class="py-[30px] px-[55px]">
+  <h3 class="text-lg font-serif font-extrabold text-darkBlue leading-[1.9rem]">
+    {subHeading}
+  </h3>
+  <h2 class="text-lg font-extrabold leading-8 mt-2 tracking-[4px]">
+    {heading}
+  </h2>
+  <p class="font-medium leading-8 mt-2">{paragraph}</p>
+  <button
+    class="rounded-full font-semibold border-solid border-2 px-10 py-2 mt-[40px] hover:bg-darkBlue hover:text-white"
+  >
+    {button}</button
+  >
+</div>
