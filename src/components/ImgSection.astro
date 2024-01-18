@@ -1,0 +1,18 @@
+---
+interface Props {
+  direction: "right" | "left";
+  imgSrc: string;
+  alt: string;
+}
+const orientation = {
+  right: true,
+  left: false,
+};
+const { direction, imgSrc, alt } = Astro.props;
+---
+
+<div
+  class=`h-[60vh] mb-[10px] flex ${orientation[direction] && 'flex-row-reverse'}`
+>
+  <img class="h-full w-[50vw] object-cover" src={imgSrc} alt={alt} />
+</div>

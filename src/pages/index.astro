@@ -4,6 +4,9 @@ import Hero from "../components/Hero.astro";
 import SectionLayout from "../components/SectionLayout.astro";
 import Info from "../components/Info.astro";
 import HeadingSec from "../components/HeadingSec.astro";
+import SliderRounded from "../components/SliderRounded.astro";
+import ImgSection from "../components/ImgSection.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout
@@ -15,7 +18,7 @@ import HeadingSec from "../components/HeadingSec.astro";
 
 		<SectionLayout>
 			<img
-				class="py-[40px] px-[30px]"
+				class="py-[40px] px-[30px] m-auto"
 				src="./square.png"
 				alt="Square background decoration"
 			/>
@@ -29,9 +32,9 @@ import HeadingSec from "../components/HeadingSec.astro";
 
 		<SectionLayout>
 			<div class="w-[50vw] h-[60vh] mb-[10px]">
-				<img
-					class="h-full object-cover"
-					src="./img-section-1.png"
+				<ImgSection
+					direction="left"
+					imgSrc="./img-section-1.png"
 					alt="People on the computer"
 				/>
 			</div>
@@ -44,13 +47,11 @@ import HeadingSec from "../components/HeadingSec.astro";
 		</SectionLayout>
 
 		<SectionLayout>
-			<div class="h-[60vh] mb-[10px] flex flex-row-reverse">
-				<img
-					class="h-full w-[50vw] object-cover"
-					src="./img-section-1.png"
-					alt="People on the computer"
-				/>
-			</div>
+			<ImgSection
+				direction="right"
+				imgSrc="./img-section-1.png"
+				alt="People on the computer"
+			/>
 			<Info
 				subHeading="Destinies"
 				heading="Escoge entre nuestros 5 paises"
@@ -65,6 +66,7 @@ import HeadingSec from "../components/HeadingSec.astro";
 				subHeading="Nuestros sestinos"
 				heading="Explore the world"
 			/>
+			<SliderRounded />
 		</SectionLayout>
 
 		<SectionLayout>
@@ -74,5 +76,23 @@ import HeadingSec from "../components/HeadingSec.astro";
 				heading="Our latest news..."
 			/>
 		</SectionLayout>
+
+		<section class="min-h-screen flex flex-col">
+			<div class="relative z-10 flex-[1_1_50vh] bg-transparent">
+				<HeadingSec
+					color="text-darBlue"
+					subHeading="Contact"
+					heading="Get in touch and let's build yuor path to success together"
+				/>
+			</div>
+			<div class="flex-[1_1_50vh] bg-lightBlue relative">
+				<Button text="CONTACT US" buttonType="secondary" addClasses="button-center" />
+				<img
+					class="absolute right-[50%] translate-x-1/2 translate-y-[-50%]"
+					src="./square.png"
+					alt="Square background decoration"
+				/>
+			</div>
+		</section>
 	</main>
 </Layout>

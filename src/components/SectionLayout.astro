@@ -1,10 +1,11 @@
 ---
 interface Props {
   background?: string;
+  addClasses?: string;
 }
-const { background } = Astro.props;
+const { background, addClasses } = Astro.props;
 ---
 
-<section class=`min-h-screen pb-[10px] ${background}`>
+<section class=`min-h-screen pb-[10px] ${background || ''} ${addClasses || ''}`>
   <slot />
 </section>

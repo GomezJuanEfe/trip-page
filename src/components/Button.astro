@@ -1,0 +1,29 @@
+---
+interface Props {
+    text: string
+    buttonType?: 'primary' | 'secondary'
+    addClasses?: string
+}
+
+const {text, buttonType, addClasses} = Astro.props
+
+const buttonTypeVar = {
+    primary: 'border-darkBlue hover:bg-darkBlue hover:text-white',
+    secondary: 'border-yellow hover:bg-yellow hover:text-white'
+}
+---
+<style>
+    .button-center {
+        position: absolute;
+        right: 50%;
+        transform: translate(50%, -50%);
+
+        margin-top: 0;
+    }
+</style>
+
+<button
+    class=`rounded-full font-semibold border-solid border-2 px-10 py-2 mt-[40px] ${buttonType ? buttonTypeVar[buttonType] : buttonTypeVar['primary']} ${addClasses || ''}`
+>
+    {text}
+</button>

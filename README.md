@@ -1,5 +1,10 @@
 # Astro Basics
 
+## Built with
+
+- Astro
+- Tailwind
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -67,3 +72,28 @@ There, in fontsource I can find two types of fonts statics and variables, which 
 When using Tailwind it's possible to setup the fonts on the tailwind.config.mjs
 
 [Check out here](https://docs.astro.build/en/guides/fonts/)
+
+### JavaScript code
+
+It is possible to add vanilla JS code that will be executed in the frontend Just using the ```<script>``` tag. This is important because it is also possible to write code between ```---```, but this code is going to be executed in the server side.
+
+If I have the type check activated I can deactivate in a specific part just using ```// @ts-nocheck```
+
+```JavaScript
+<script>
+  // @ts-nocheck
+  const carouselList = document.querySelector(".carousel__list");
+  const carouselItems = document.querySelectorAll(".carousel__item");
+  const elems = Array.from(carouselItems);
+
+  ...
+</script>
+```
+
+## Acknowledgements
+
+I want to say thanks to all the great people how create incredible things on the internet and share their knowledge.
+
+Special thanks to [MiduDev](https://www.twitch.tv/midudev), one of the biggest community builders in the hispanic people. Most of my knowledge in Astro so far was thanks to him.
+
+- Thanks to Max Lykov for the [incredible Carrousel](https://codepen.io/frise/pen/mZvKpe)
