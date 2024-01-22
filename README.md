@@ -98,6 +98,35 @@ That was one of the most challenges things on the web.
 
 - When the width is enought for each section to get the 100vh all the SVGs are in the front
 
+### CSS
+
+**White-space property**
+
+```CSS
+div {
+  /* This is the default, you don't need to
+     explicitly declare it unless overriding
+     another declaration */
+  white-space: normal; 
+}
+```
+
+If you want to prevent the text from wrapping, you can apply `white-space: nowrap`;
+
+**SVG <path> the basics**
+
+SVG has a limited number of defined shapes. For everything else, there is the `<path>` element. The shape of a path is given by the **"d"** attribute. According to the specs, d stands for **data**; but it could just as well stand for **directions**. It's a string of codes and coordinates that tell the program what type of line to draw, and where to draw it.
+
+- **M or m**: "Move" command. Followed by two numbers, the first giving the x (horizontal) position and the second the y (vertical) position.
+
+- **L or l**: "Line" command. Followed by an even number of numbers, which are interpretted as (x,y) pairs.
+
+- **H or h**: "Horizontal line" command. Followed by one or more numbers.
+
+- **V or v**: "Vertical line" command. Followed by one or more numbers.
+
+- These are the most common, but there's more..
+
 ## Acknowledgements
 
 I want to say thanks to all the great people how create incredible things on the internet and share their knowledge.
