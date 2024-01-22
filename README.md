@@ -90,6 +90,14 @@ If I have the type check activated I can deactivate in a specific part just usin
 </script>
 ```
 
+### Animating the svg
+
+That was one of the most challenges things on the web.
+
+- the SVGs are fragmented by section
+
+- When the width is enought for each section to get the 100vh all the SVGs are in the front
+
 ## Acknowledgements
 
 I want to say thanks to all the great people how create incredible things on the internet and share their knowledge.

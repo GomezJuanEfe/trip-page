@@ -6,6 +6,6 @@ interface Props {
 const { background, addClasses } = Astro.props;
 ---
 
-<section class=`min-h-screen pb-[10px] ${background || ''} ${addClasses || ''}`>
+<section class=`min-h-screen pb-[10px] relative ${background || ''} ${addClasses || ''}`>
   <slot />
 </section>

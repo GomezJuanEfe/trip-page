@@ -17,8 +17,12 @@ import Button from "../components/Button.astro";
 		<Hero />
 
 		<SectionLayout>
+			<svg class="sketch" data-reverse="true" width="253" height="665" viewBox="0 0 253 665" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M128.439 665C128.284 630.596 127.79 349.664 127.048 339.667C126.306 329.669 122.72 326.553 121.02 326.244L51.9304 330.41L21.3269 300.789L13.9079 301.714C18.6993 312.052 28.375 332.727 28.7459 332.724C24.2945 332.724 22.8725 333.65 22.718 334.113C22.5634 334.267 22.2543 334.946 22.2543 336.427C22.2543 337.908 24.7273 340.129 25.9638 341.055L12.5168 352.163L19.9358 351.237L35.2376 344.295C50.8175 349.479 61.5136 351.392 64.914 351.7L105.255 354.94L99.227 364.659L58.4223 402.149C58.886 402.457 60.0916 403.259 61.2045 404C62.3173 404.741 65.0685 403.074 66.305 402.149L106.646 373.453C120.371 377.526 129.984 377.619 133.076 377.156C135.858 375.767 135.858 366.511 133.076 363.734C130.85 361.512 123.184 362.808 119.629 363.734L130.294 354.94C136.6 355.68 144.359 352.78 147.45 351.237L188.255 349.386C193.046 349.232 203.186 348.831 205.411 348.46C207.637 348.09 215.612 345.221 219.322 343.832C221.331 342.906 225.164 340.407 224.423 337.815C223.495 334.575 219.322 331.798 217.004 330.873C215.149 330.132 214.067 329.021 213.758 328.559C213.758 328.25 212.738 327.078 208.657 324.856C204.577 322.634 194.283 322.079 189.646 322.079L137.713 325.319L128.903 295.698L127.048 295.235V0" stroke="#FFD700" stroke-width="2"/>
+			</svg>
+				
 			<img
-				class="py-[40px] px-[30px] m-auto"
+				class="py-[40px] px-[30px] m-auto w-[375px]"
 				src="./square.png"
 				alt="Square background decoration"
 			/>
@@ -31,6 +35,11 @@ import Button from "../components/Button.astro";
 		</SectionLayout>
 
 		<SectionLayout>
+
+			<svg class="sketch" width="253" height="666" viewBox="0 0 253 666" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M128.296 0V262.5H138.033C140.352 262.809 144.989 264.907 144.989 270.831C144.989 276.755 144.989 289.653 144.989 295.361H157.044C159.981 295.207 165.855 296.657 165.855 303.692C165.855 310.727 165.855 354.757 165.855 375.893C165.545 378.516 163.629 383.761 158.436 383.761C153.242 383.761 154.108 383.761 155.19 383.761V393.018C155.19 394.253 154.541 396.721 151.944 396.721C149.347 396.721 145.298 396.721 143.597 396.721C142.361 396.567 139.888 395.61 139.888 393.018C139.888 390.426 139.888 385.767 139.888 383.761H106.967V393.018C106.967 394.253 106.225 396.721 103.257 396.721C100.289 396.721 96.4563 396.721 94.9107 396.721C93.6742 396.721 91.2012 395.98 91.2012 393.018C91.2012 390.056 91.2012 385.613 91.2012 383.761C87.8008 383.761 81 382.188 81 375.893C81 369.599 81 325.136 81 303.692C81.3091 300.915 83.3185 295.361 88.8827 295.361C94.447 295.361 111.912 295.361 119.949 295.361C129.687 295.361 128.296 300.822 128.296 320.817C128.296 330.63 128.296 546.049 128.296 666" stroke="#FFD700" stroke-width="2"/>
+			</svg>
+			
 			<div class="w-[50vw] h-[60vh] mb-[10px]">
 				<ImgSection
 					direction="left"
@@ -96,3 +105,48 @@ import Button from "../components/Button.astro";
 		</section>
 	</main>
 </Layout>
+
+
+<style is:global>
+
+svg.sketch {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+
+</style>
+
+<script>
+  // @ts-nocheck
+	const svgArr = [...document.querySelectorAll("svg.sketch")]
+	const pathArr = svgArr.map((e) => e.querySelector("path"))
+	const pathLengthArr = pathArr.map((e) => e.getTotalLength())
+	const totalDistances = svgArr.map((e) => e.clientHeight / 2)
+
+	const reverseArr = svgArr.map((e) => Boolean(e.dataset.reverse))
+
+	const scroll = () => {
+		const elementsDistance = svgArr.map((e, i) => {
+			let distance = e.getBoundingClientRect().y
+			if (i > 0) {
+				distance -= totalDistances[i] / 2
+			}
+			return Math.max(0, -distance)
+		})
+		const percentages = elementsDistance.map((e, i) => Math.min(1, (e / totalDistances[i])))
+
+		pathArr.map((e, i) => e.style.strokeDasharray = pathLengthArr[i])
+		pathArr.map((e, i) => {
+			const percentage = reverseArr[i] ? -(1 - percentages[i]) : 1 - percentages[i]
+			e.style.strokeDashoffset = pathLengthArr[i] * percentage
+		})
+	};
+
+	scroll();
+	window.addEventListener("scroll", scroll);
+
+</script>

@@ -17,13 +17,14 @@ const buttonTypeVar = {
         position: absolute;
         right: 50%;
         transform: translate(50%, -50%);
+        z-index: 20;
 
         margin-top: 0;
     }
 </style>
 
 <button
-    class=`rounded-full font-semibold border-solid border-2 px-10 py-2 mt-[40px] ${buttonType ? buttonTypeVar[buttonType] : buttonTypeVar['primary']} ${addClasses || ''}`
+    class=`whitespace-nowrap rounded-full font-semibold border-solid border-2 px-8 py-1 mt-[40px] ${buttonType ? buttonTypeVar[buttonType] : buttonTypeVar['primary']} ${addClasses || ''}`
 >
     {text}
 </button>

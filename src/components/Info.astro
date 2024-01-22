@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
   subHeading: string;
   heading: string;
@@ -17,9 +19,5 @@ const { subHeading, heading, paragraph, button } = Astro.props;
     {heading}
   </h2>
   <p class="font-medium leading-8 mt-2">{paragraph}</p>
-  <button
-    class="rounded-full font-semibold border-solid border-2 px-10 py-2 mt-[40px] hover:bg-darkBlue hover:text-white"
-  >
-    {button}
-  </button>
+  <Button text={button} />
 </div>
