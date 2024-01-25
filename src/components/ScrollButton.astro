@@ -1,0 +1,13 @@
+---
+interface Props {
+    text?: string
+    color?: string
+}
+
+const {text, color} = Astro.props
+---
+<div class=`w-full absolute bottom-0 py-16 text-center ${color || ''}`>
+    <span class="btn-scroll cursor-pointer">
+        {text || 'SCROLL'}
+    </span>
+</div>

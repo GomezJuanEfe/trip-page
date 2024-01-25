@@ -7,7 +7,7 @@ import HeadingSec from "../components/HeadingSec.astro";
 import SliderRounded from "../components/SliderRounded.astro";
 import ImgSection from "../components/ImgSection.astro";
 import Button from "../components/Button.astro";
-import Nextbutton from "../components/Nextbutton.astro";
+import ScrollButton from "../components/ScrollButton.astro";
 ---
 
 <Layout
@@ -35,7 +35,7 @@ import Nextbutton from "../components/Nextbutton.astro";
 				button="FIND OUT MORE"
 			/>
 
-			<Nextbutton text="NEXT"/>
+			<ScrollButton />
 
 		</SectionLayout>
 
@@ -58,6 +58,8 @@ import Nextbutton from "../components/Nextbutton.astro";
 				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit congue nisi, sed egestas tellus."
 				button="FIND OUT MORE"
 			/>
+			<ScrollButton />
+
 		</SectionLayout>
 
 		<SectionLayout>
@@ -72,6 +74,9 @@ import Nextbutton from "../components/Nextbutton.astro";
 				paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit congue nisi, sed egestas tellus."
 				button="FIND OUT MORE"
 			/>
+
+			<ScrollButton />
+
 		</SectionLayout>
 
 		<SectionLayout background="bg-darkBlue">
@@ -81,6 +86,9 @@ import Nextbutton from "../components/Nextbutton.astro";
 				heading="Explore the world"
 			/>
 			<SliderRounded />
+
+			<ScrollButton color="text-white" />
+
 		</SectionLayout>
 
 		<SectionLayout>
@@ -89,6 +97,9 @@ import Nextbutton from "../components/Nextbutton.astro";
 				subHeading="Stay Update"
 				heading="Our latest news..."
 			/>
+
+			<ScrollButton />
+
 		</SectionLayout>
 
 		<section class="min-h-screen flex flex-col">
@@ -106,6 +117,9 @@ import Nextbutton from "../components/Nextbutton.astro";
 					src="./square.png"
 					alt="Square background decoration"
 				/>
+				<button id="btn-go-top" type="button">
+					Click & Go SLOW to the TOP!
+				</button>
 			</div>
 		</section>
 	</main>
@@ -138,7 +152,7 @@ svg.sketch {
 		const elementsDistance = svgArr.map((e, i) => {
 			let distance = e.getBoundingClientRect().y
 			if (i > 0) {
-				distance -= totalDistances[i] / 2
+				distance -= totalDistances[i] / 1.1
 			}
 			return Math.max(0, -distance)
 		})

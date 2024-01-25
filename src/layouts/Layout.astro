@@ -16,6 +16,7 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<script src="/src/assets/js/scroll.js"></script>
 		<title>{title}</title>
 	</head>
 	<body>
@@ -37,7 +38,6 @@ const { title, description } = Astro.props;
 		);
 	}
 	html {
-		scroll-behavior: smooth;
 		color: var(--darkBlue);
 	}
 </style>

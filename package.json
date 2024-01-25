@@ -18,7 +18,13 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "prettier": "^3.1.1",
+    "prettier": "3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": false
   }
 }
